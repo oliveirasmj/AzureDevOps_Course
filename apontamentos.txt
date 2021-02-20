@@ -37,4 +37,3 @@ Com IC :
 	-> o código compila
 	-> se tem qualidade
 	-> passa nos testes unitários
-
