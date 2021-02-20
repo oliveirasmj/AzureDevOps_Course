@@ -1,0 +1,40 @@
+Git Flow: um modelo de fluxo de trabalho para desenvolvimento de software com uma ou mais equipes distintas contribuindo com a mesma base de código que visa normalizar o controle de versões. o Git Flow estabelece algumas regras de nomenclaturas para tipos de branches enquanto, ao mesmo tempo, define o que cada tipo de branch faz:
+
+Branch master ( Mestre / principal )
+É a branch que contém código em nível de produção, ou seja, o código mais maduro existente na sua aplicação. Todo o código novo produzido eventualmente é juntado com a branch máster em algum momento do desenvolvimento;
+Branch develop ( Desenvolvimento )
+É a branch que contém código em nível preparatório para o próximo deploy. Ou seja, quando features são terminadas, elas são juntadas com a branch develop, testadas (em conjunto, no caso de mais de uma feature), e somente depois as atualizações da branch develop passam por mais um processo para então ser juntadas com a branch master;
+
+Branches feature/* (Desenvolvimento de novas Funcionalidades)
+São branches no qual são desenvolvidos recursos novos para o projeto em questão. Essas branches tem por convenção nome começando com feature/ (exemplo: feature/new-layout) e são criadas a partir da branch develop (pois um recurso pode depender diretamente de outro recurso em algumas situações), e, ao final, são juntadas com a branch develop;
+
+Branches hotfix/* (Correção de Bugs críticos)
+São branches no qual são realizadas correções de bugs críticos encontrados em ambiente de produção, e que por isso são criadas a partir da branch master, e são juntadas diretamente com a branch master e com a branch develop (pois os próximos deploys também devem receber correções de bugs críticos, certo?). Por convenção, essas branches tem o nome começando com hotfix/ e terminando com o próximo sub-número de versão (exemplo: hotfix/2.31.1), normalmente seguindo as regras de algum padrão de versionamento, como o padrão do versionamento semântico;
+
+Branches release/* (Inserção de Novas Funcionalidades)
+São branches com um nível de confiança maior do que a branch develop, e que se encontram em nível de preparação para ser juntada com a branch master e com a branch develop (para caso tenha ocorrido alguma correção de bug na branch release/* em questão). Note que, nessas branches, bugs encontrados durante os testes das features que vão para produção podem ser corrigidos mais tranquilamente, antes de irem efetivamente para produção. Por convenção, essas branches tem o nome começando com release/ e terminando com o número da próxima versão do software (seguindo o exemplo do hotfix, dado acima, seria algo como release/2.32.0), normalmente seguindo as regras do versionamento semântico, como falado acima;
+
+https://medium.com/@lariodiniz/tutorial-git-com-git-flow-476ad906c8ae
+
+
+
+
+-----Integração Contínua-----
+
+Build - versão compilada de um software
+Agent pool - é um agente de compilação
+
+Integração contínua - é uma prática de desenvolvimento de software que consiste na entrega frequente de todos os membros do projeto. Cada integração é verificada por um build automatizado(trigger) incluindo testes para detetar erros de integração o mais rápido possível. Permite diminuir os erros e o tempo.
+
+Sem IC :
+-trabalhador trabalha de forma independente
+-responsável por verificar se projeto compila
+-sem há validação automática de testes mas sim por si mesmo
+
+Com IC :
+-é usada uma branch específica
+-sempre que a branch é usada é verificado de forma automática(triggers) se:
+	-> o código compila
+	-> se tem qualidade
+	-> passa nos testes unitários
+
