@@ -55,3 +55,6 @@ Integração Contínua - Builds e Testes (pipeline)
 Entrega Contínua - release
 
 -----Testes Unitários-----
+
+Teste Unitário - é uma metodologia que pretende provar que um código está correto
+(teste calculadora, letra maiuscula)
