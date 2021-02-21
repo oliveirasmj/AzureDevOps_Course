@@ -24,7 +24,9 @@ https://medium.com/@lariodiniz/tutorial-git-com-git-flow-476ad906c8ae
 Build - versão compilada de um software
 Agent pool - é um agente de compilação
 
-Integração contínua - é uma prática de desenvolvimento de software que consiste na entrega frequente de todos os membros do projeto. Cada integração é verificada por um build automatizado(trigger) incluindo testes para detetar erros de integração o mais rápido possível. Permite diminuir os erros e o tempo.
+Integração contínua - é uma prática de desenvolvimento de software que consiste na entrega frequente de todos os membros do projeto. Cada integração é verificada por um build automatizado(trigger/pipeline) incluindo testes para detetar erros de integração o mais rápido possível. Permite diminuir os erros e o tempo.
+
+Pipeline - consiste no processo de tornar o código disponível automaticamente, desde que passe na compilação, testes unitários, análise de código, criação do instalador... - após fazer commit numa branch por exemplo
 
 Sem IC :
 -trabalhador trabalha de forma independente
@@ -37,3 +39,19 @@ Com IC :
 	-> o código compila
 	-> se tem qualidade
 	-> passa nos testes unitários
+
+-----Entrega Contínua-----
+
+Release - consiste em publicar a aplicação no servidor fazendo o deployment
+
+Entrega Contínua - é disponibilizar a nossa aplicação nos seus ambientes (em tempos curtos e baixo custo sem perder qualidade)
+
+Implantação Contínua - envia, automaticamente, o código testado para a produção
+
+
+-----Integração Contínua VS Entrega Contínua-----
+
+Integração Contínua - Builds e Testes (pipeline)
+Entrega Contínua - release
+
+-----Testes Unitários-----
